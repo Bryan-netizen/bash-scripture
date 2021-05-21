@@ -1,0 +1,20 @@
+#  ___  ___ __   __(_)  __| || |_  _ __ __ _   ___ | | __ ___  _ __ 
+# / __|/ _ \\ \ / /| | / _` || __|| '__/ _` | / __|| |/ // _ \| '__|
+#| (__| (_) |\ V / | || (_| || |_ | | | (_| || (__ |   <|  __/| |   
+# \___|\___/  \_/  |_| \__,_| \__||_|  \__,_| \___||_|\_\\___||_| 
+#
+#source:: https://github.com/Bryan-netizen/bash-scripture
+#email:: bryk@tuta.io
+#
+#Forked from Luke Smith
+#
+#!/bin/bash
+
+
+[ "$(stat -c  %y ~/.cache/corona_ke 2>/dev/null| cut -d' ' -f1)" != "$(date '+%Y-%m=%d')" ] && curl -s https://corona-stats.online/kenya > ~/.cache/corona_ke
+
+
+grep "Country\|Kenya" ~/.cache/corona_ke |
+      sed "s/\s*//g ; s/║//g ; s/│/;/g"|
+      cut -d';' -f 2,8,9,10 |
+      awk -F ';' '{print "$Kenya" "😷️"$2,"😱️" $3}'
