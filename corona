@@ -17,4 +17,4 @@
 grep "Country\|Kenya" ~/.cache/corona_ke |
       sed "s/\s*//g ; s/║//g ; s/│/;/g"|
       cut -d';' -f 2,8,9,10 |
-      awk -F ';' '{print "$Kenya" "😷️"$2,"😱️" $3}'
+      awk -F ';' '{print "Kenya" "😷️"$2,"😱️" $3}'
