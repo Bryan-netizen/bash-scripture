@@ -7,6 +7,8 @@
 #source:: https://github.com/Bryan-netizen/bash-scripture/blob/main/showlinks
 #email:: bryk@tuta.io
 
-#!/bin/bash
+#!/bin/env bash
 
 xdg-open >/dev/null $(cat * 2>/dev/null |grep -Eo "(http|https)://[a-zA-Z0-9./?=_%:-]*" 2>/dev/null |dmenu -l 15 |sort | uniq)
+
+#make for with xclip for curl/wget
