@@ -17,7 +17,7 @@
 
 # Why did I write this script? 
 #I run a plex server and torrent client from my laptop, in a home office.
-#Randomly (usaully a meal break) the laptop goes off cause i'm running it on battery power.
+#Randomly (usaully meal breaks) the laptop goes off cause i'm running it on battery power.
 #So this should help remind me to plug in power before it shutsdown.
 
 [ "$(acpi |
