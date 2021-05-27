@@ -20,6 +20,7 @@
 #Randomly (usually meal breaks) the laptop goes off cause i'm running it on battery power.
 #So this should help remind me to plug in power before it shutsdown.
 
+#!/bin/sh
 [ "$(acpi |
           grep 'Battery 0' | 
           sed 's/,/:/g' | 
