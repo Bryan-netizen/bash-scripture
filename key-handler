@@ -5,9 +5,9 @@
       fullpath="pwd/*"
       case "$1" in 
         "w")
-     notify-send -i $HOME/Pictures/wallpaper/cbebop.jpeg "zipping" ; 
+     notify-send "zipping" ; 
                  zip -r -D -@ -q * && 
-                notify-send -i $HOME/Pictures/wallpaper/cbebop.jpeg "done"|
+                notify-send "done"|
                 mv *.zip Kings.Viking.cbz &&  mv *.cbz ../ 
 esac
 
