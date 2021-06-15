@@ -1,0 +1,9 @@
+
+function in()       
+sudo apt install $(apt list | fzf-tmux | awk -F '/' '{print $1}')
+
+
+function pl()
+j music && mpv --playlist=playlist.txt "$(fd . -t d '/home/sibs/Music' | fzf-tmux -m > playlist.txt)"
+
+
