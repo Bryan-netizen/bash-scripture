@@ -2,6 +2,7 @@
 ## Requirements 
 ## fzf
 
+
 ## What does it do? :: Searches & installs packages through fzf.
 
 function in()       
