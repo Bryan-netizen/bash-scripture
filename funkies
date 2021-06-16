@@ -1,7 +1,21 @@
 
+## Requirements 
+## fzf
+
+## What does it do? :: Searches & installs packages through fzf.
+
 function in()       
 sudo apt install $(apt list | fzf-tmux | awk -F '/' '{print $1}')
 
+-------------------------------------------------------------------
+
+##Requirements
+## autojump - https://github.com/wting/autojump#installation.
+## fd-find - available in most major distros.
+## fzf - available in most distros.
+
+
+## What does it do? :: Creates and makes a playlist from Music folder. 
 
 function pl()
 j music && mpv --playlist=playlist.txt "$(fd . -t d '/home/sibs/Music' | fzf-tmux -m > playlist.txt)"
