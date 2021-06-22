@@ -16,9 +16,27 @@ sudo apt install $(apt list | fzf-tmux | awk -F '/' '{print $1}')
 ## fzf - available in most distros.
 
 
-## What does it do? :: Creates and makes a playlist from Music folder. 
+## What does it do? :: Creates and makes a laylist from Music folder. 
 
 function pl()
-j music && mpv --playlist=playlist.txt "$(fd . -t d '/home/sibs/Music' | fzf-tmux -m > playlist.txt)"
+j music && mpv --playlist=playlist.txt"$(fd . -t d '/home/sibs/Music' | fzf-tmux -m > playlist.txt)" ; cd ~
+
+
+
+## What does it do? :: Searches, changes direcory and lists content of directories from fzf, I only use it in my home folder to avoid endless caching of all directories.
+
+function f()
+cd "$(fd --type directory . /home/user/ | fzf-tmux -r 45%)" && ls -la
+
+
+
+
+## What does it do? :: Searches for links in pdf files and opens them in browser, its a bit hacky because of calling both fzf-tmux and fzf to make it usable, ubuntu doesnt play nice with suckless tools. 
+
+# Requirements
+# For this exact set up tmux & fzf
+
+function pp()
+xdg-open >/dev/null 2>&1 $(pdftotext "$(fd --extension pdf | fzf-tmux -d 45%)" - | grep -Eo "(http|https)://[a-zA-Z0-9./?=_%:-]*" |sort | uniq| fzf)
 
 
