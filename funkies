@@ -1,7 +1,15 @@
+                        
+#  _ 
+# |_  ._ | o _  _ 
+# ||_|| ||<|(/__> 
+                                  
+# A growing list of functions I use on a daily basis.
+# source:: https://github.com/Bryan-netizen/bash-scripture/blob/main/funkies
+# email:: bryk@tuta.io
 
+#PACKAGE INSTALLER
 ## Requirements 
 ## fzf
-
 
 ## What does it do? :: Searches & installs packages through fzf.
 
@@ -10,28 +18,36 @@ sudo apt install $(apt list | fzf-tmux | awk -F '/' '{print $1}')
 
 -------------------------------------------------------------------
 
+#PLAYLIST GENERATOR
+## What does it do? :: Creates and makes a playlist from Music folder. 
+
 ##Requirements
 ## autojump - https://github.com/wting/autojump#installation.
 ## fd-find - available in most major distros.
 ## fzf - available in most distros.
 
-
-## What does it do? :: Creates and makes a laylist from Music folder. 
-
 function pl()
 j music && mpv --playlist=playlist.txt"$(fd . -t d '/home/sibs/Music' | fzf-tmux -m > playlist.txt)" ; cd ~
 
+-------------------------------------------------------------------------------------------------------------
 
+##DIRSEARCH
+## What does it do? :: Searches, cd's into directory and lists content of directories from fzf.
+## I only use it in my home folder to avoid endless caching.
 
-## What does it do? :: Searches, changes direcory and lists content of directories from fzf, I only use it in my home folder to avoid endless caching of all directories.
+##Requirments
+## fzf-tmux
+## fd-find
 
 function f()
 cd "$(fd --type directory . /home/user/ | fzf-tmux -r 45%)" && ls -la
 
+--------------------------------------------------------------------------------------------------------------
 
-
-
-## What does it do? :: Searches for links in pdf files and opens them in browser, its a bit hacky because of calling both fzf-tmux and fzf to make it usable, ubuntu doesnt play nice with suckless tools. 
+#PDFLINKS
+## What does it do? :: Searches for links in pdf files and opens them in browser.
+#Its a bit hacky because of calling both fzf-tmux and fzf to make it usable.
+#Ubuntu doesnt play nice with suckless tools. 
 
 # Requirements
 # For this exact set up tmux & fzf
