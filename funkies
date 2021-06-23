@@ -19,7 +19,7 @@ sudo apt install $(apt list | fzf-tmux | awk -F '/' '{print $1}')
 -------------------------------------------------------------------
 
 #PLAYLIST GENERATOR
-## What does it do? :: Creates and makes a playlist from Music folder. 
+## What does it do? :: Creates and plays a playlist from Music folder. 
 
 ##Requirements
 ## autojump - https://github.com/wting/autojump#installation.
