@@ -22,12 +22,11 @@ sudo apt install $(apt list | fzf-tmux | awk -F '/' '{print $1}')
 ## What does it do? :: Creates and plays a playlist from Music folder. 
 
 ##Requirements
-## autojump - https://github.com/wting/autojump#installation.
 ## fd-find - available in most major distros.
 ## fzf - available in most distros.
 
 function pl()
-j music && mpv --playlist=playlist.txt"$(fd . -t d '/home/sibs/Music' | fzf-tmux -m > playlist.txt)" ; cd ~
+/home/sibs/Music && mpv --playlist=playlist.txt"$(fd . -t d '/home/sibs/Music' | fzf-tmux -m > playlist.txt)"
 
 -------------------------------------------------------------------------------------------------------------
 
@@ -55,4 +54,12 @@ cd "$(fd --type directory . /home/user/ | fzf-tmux -r 45%)" && ls -la
 function pp()
 xdg-open >/dev/null 2>&1 $(pdftotext "$(fd --extension pdf | fzf-tmux -d 45%)" - | grep -Eo "(http|https)://[a-zA-Z0-9./?=_%:-]*" |sort | uniq| fzf)
 
+
+
+# AliaSearch
+# What does it do? :: Searchers through my aliases and copies to clipboard.
+# I have too many aliases to memorize so i needed a way to search through them.
+
+function aa()
+alias | fzf-tmux|awk -F '=' '{}' | xclip -selection -c && notify-send -i /home/sibs/Pictures/screenshot/icon.png "copied" 
 

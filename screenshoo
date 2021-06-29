@@ -1,0 +1,7 @@
+#!/bin/ env bash
+
+for i in /home/sibs/Pictures/*Screenshot*;
+
+		 do
+		 mv "$i" /home/sibs/Pictures/screenshots/ ;
+		 done
