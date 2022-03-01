@@ -27,4 +27,4 @@
           awk '{print $4}' | 
           cut -d ':' -f1 | 
           cut -d '%' -f1)" -ge '97' ] && 
-          /usr/local/bin/telegram-send "⚡️Battery Recharged 🔋️"  
+          /usr/bin/telegram-send "⚡️Battery Recharged 🔋️"  
