@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+
+# Script name bwiki
+
+# Description This script is an offline wiki for bash and abs documentation
+# Dependancies dmenu,abs-guide, fzf(if prefered) all packages are available from apt
+
+# Contributors: Sibs
+
+#set -eou pipefail
+
+bwikidir="/usr/share/doc/abs-guide/html/"
+
+bwikidocs="$(find ${bwikidir} -iname "*.html")" 
+
+main(){
+    choice=$(printf '%s\n' "${bwikidocs[@]}" | 
+            cut -d '/' -f7- | 
+            sort -d |
+            sed -e 's/.html//g' |
+            dmenu -i -l 20 -p 'ABS-GUIDE: ') || exit 1
+        
+    if [ "$choice" ] ; then
+        chapter=$(printf '%s\n' "${bwikidir}${choice}.html")
+        links2 "$chapter" 
+    else
+        echo "Program terminated" && exit 0
+    fi
+
+}
+
+main

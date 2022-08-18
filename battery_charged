@@ -4,7 +4,7 @@
 #                               ___/
 
 #source:: https://github.com/Bryan-netizen/bash-scripture/blob/main/batterywatcher
-#email:: bryk@tuta.io
+#email:: bryk-git.proton.me
 
 # Requirements:
 # telegram-send: pip3 install telegram send
@@ -26,5 +26,5 @@
           sed 's/,/:/g' | 
           awk '{print $4}' | 
           cut -d ':' -f1 | 
-          cut -d '%' -f1)" -ge '97' ] && 
-          /usr/bin/telegram-send "⚡️Battery Recharged 🔋️"  
+          cut -d '%' -f1)" -ge '75' ] && 
+          /usr/local/bin/telegram-send "⚡️Battery Recharged 🔋️"  

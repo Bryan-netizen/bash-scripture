@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+curl -s https://api.coindesk.com/v1/bpi/currentprice/usd.json | 
+jq -r '[.time|.updated],[.bpi|.USD|.rate],[.bpi|.USD|.rate_float]' |
+xargs >> '/home/sibs/.cache/daily.btc.pricecheck' 

@@ -1,0 +1,5 @@
+ #!/bin/sh
+
+/usr/bin/apg -a 1 -n 3 -m 20 -x 30 -s -M SNCL
+
+

@@ -1,5 +1,5 @@
 #!/bin/sh
-
+### Work in progress
 #while read -r file 
 
       fullpath="pwd/*"
@@ -8,6 +8,6 @@
      notify-send "zipping" ; 
                  zip -r -D -@ -q * && 
                 notify-send "done"|
-                mv *.zip Kings.Viking.cbz &&  mv *.cbz ../ 
+                mv *.zip file.cbz &&  mv *.cbz ../ 
 esac
 
