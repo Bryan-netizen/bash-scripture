@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+/#!/usr/bin/env bash
 #
 # Script name: mitemas
 # Description: Creates a playlist based of your video directories, for an easier waching experience.
@@ -24,7 +24,7 @@ read -p '  ' mite # Reads in user input
 
 case $mite in				# Uses input to make the selection, has to match the case selection.
 	ani|Ani|anime|Anime)
-		mpv --playlist=$ani_play"$(fdfind . -t d $animes | fzf -m > $ani_play)" # Copies dir file name to a playlist and plays with mpv.
+		mpv --playlist=$ani_play"$(fdfind . -t d $animes | fzf -m > $ani_play)" # Copies directory file name to a playlist and plays with mpv.
 		;;
 	tv|TV|teli|Teli|Television)
 		mpv --playlist=$tv_play"$(fdfind . -t d $teli | fzf -m > $tv_play)"
@@ -36,4 +36,4 @@ case $mite in				# Uses input to make the selection, has to match the case selec
 		echo you did not make a selection... # Executes if nothing was selected.
 esac
 
-EOF
+exit 0
